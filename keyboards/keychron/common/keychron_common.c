@@ -122,6 +122,13 @@ bool process_record_keychron_common(uint16_t keycode, keyrecord_t *record) {
                 // Do something else when release
             }
             return false; // Skip all further processing of this key
+        case KC_APFN:
+            if (record->event.pressed) {
+                register_code(KC_GLOBE);
+            } else {
+                unregister_code(KC_GLOBE);
+            }
+            return false;
         case KC_TASK:
         case KC_FILE:
         case KC_SNAP:
