@@ -1,3 +1,22 @@
+feat: Add support for Apple Globe/FN key (KC_GLOBE)
+
+- Add new keycode KC_GLOBE (0x00C3) for Apple's Globe/FN key
+- Implement KC_APFN custom keycode in Keychron common code
+- Update keycode tables and ranges to include the new Globe key
+- Add Globe key to VIA JSON configuration
+- Modify via K3 Max keymap to use the Globe key
+- Map Globe key to AC_NEXT_KEYBOARD_LAYOUT_SELECT in USB HID report
+- Enable shared endpoint for better macOS compatibility
+
+This change implements proper support for the Apple Globe/FN key,
+allowing for better integration with macOS keyboard layout switching.
+
+usage:
+```
+qmk config user.keyboard=keychron/k3_max/ansi/rgb
+qmk compile -km via
+```
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
